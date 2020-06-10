@@ -22,6 +22,7 @@ public class MyBrokerControllerTest {
         final BrokerConfig brokerConfig = new BrokerConfig();
         brokerConfig.setBrokerName("broker-a");
         brokerConfig.setNamesrvAddr("127.0.0.1:9876");
+        brokerConfig.setAutoCreateTopicEnable(true);
 
         // MessageStoreConfig 配置
         final MessageStoreConfig messageStoreConfig = new MessageStoreConfig();
@@ -40,7 +41,7 @@ public class MyBrokerControllerTest {
         brokerController.start();
         // 睡觉，就不起来
         System.out.println("你猜");
-        Thread.sleep(DateUtils.MILLIS_PER_DAY);
+        //Thread.sleep(DateUtils.MILLIS_PER_DAY);
 
     }
 }

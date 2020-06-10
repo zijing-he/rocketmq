@@ -18,11 +18,13 @@ public class MyProducer {
          * Launch the instance.
          */
         producer.setNamesrvAddr("127.0.0.1:9876"); // <x> 哈哈哈哈
+        producer.setVipChannelEnabled(false);
+        producer.setSendMsgTimeout(15000);
         producer.start();
 
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 1; i++){
             try {
-                Message msg = new Message("testTopic",//topic
+                Message msg = new Message("topicTest",//topic
                         "tagA",//tag
                         ("I am body -- " + i).getBytes(RemotingHelper.DEFAULT_CHARSET)//body
                 );
